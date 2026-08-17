@@ -6,9 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>MC TikTok — Montaż reklam Minecraft</title>
-  <meta name="description" content="Montaż reklam TikTok dla serwerów Minecraft. TikTok do 20 sekund — ~ 20 zł.">
+  <meta
+    name="description"
+    content="Montaż krótkich reklam TikTok dla serwerów Minecraft. Szybki montaż, napisy, efekty i muzyka."
+  >
 
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
     * {
       margin: 0;
       padding: 0;
@@ -20,386 +25,861 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #07080d;
-      color: white;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: #0b0d0c;
+      color: #f3f5f3;
       overflow-x: hidden;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    body::selection {
+      background: #7ac943;
+      color: #081008;
     }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(1080px, calc(100% - 36px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       TŁO
+    ========================= */
 
     body::before {
       content: "";
       position: fixed;
-      width: 600px;
-      height: 600px;
-      background: #6c3cff;
-      filter: blur(180px);
-      opacity: 0.12;
-      top: -250px;
-      right: -150px;
+      inset: 0;
       pointer-events: none;
-      z-index: -1;
+      z-index: -2;
+
+      background:
+        linear-gradient(
+          rgba(11, 13, 12, 0.94),
+          rgba(11, 13, 12, 0.97)
+        ),
+        repeating-linear-gradient(
+          0deg,
+          rgba(255,255,255,0.018) 0px,
+          rgba(255,255,255,0.018) 1px,
+          transparent 1px,
+          transparent 4px
+        );
     }
 
     body::after {
       content: "";
       position: fixed;
-      width: 500px;
-      height: 500px;
-      background: #00d9a0;
-      filter: blur(200px);
-      opacity: 0.06;
-      bottom: -250px;
-      left: -150px;
+      width: 420px;
+      height: 420px;
+      top: -220px;
+      right: -180px;
+      border-radius: 50%;
+      background: #6ea83b;
+      filter: blur(180px);
+      opacity: 0.07;
       pointer-events: none;
       z-index: -1;
     }
 
-    .container {
-      width: min(1100px, calc(100% - 40px));
-      margin: auto;
-    }
-
-    /* NAVIGACJA */
+    /* =========================
+       NAV
+    ========================= */
 
     nav {
-      height: 80px;
+      height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid #1e2420;
     }
 
     .logo {
-      font-size: 20px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 17px;
       font-weight: 900;
-      letter-spacing: -1px;
+      letter-spacing: -0.6px;
+    }
+
+    .logo-square {
+      width: 30px;
+      height: 30px;
+      background: #78c43e;
+      border: 3px solid #4f8e27;
+      box-shadow:
+        inset 0 -5px 0 rgba(0,0,0,0.16),
+        inset 0 3px 0 rgba(255,255,255,0.14);
+      position: relative;
+    }
+
+    .logo-square::after {
+      content: "";
+      position: absolute;
+      width: 8px;
+      height: 5px;
+      background: rgba(255,255,255,0.25);
+      top: 4px;
+      left: 4px;
     }
 
     .logo span {
-      color: #8b63ff;
+      color: #7fc94b;
     }
 
     .nav-links {
       display: flex;
-      gap: 28px;
-      color: #9da3b0;
-      font-size: 14px;
+      align-items: center;
+      gap: 26px;
+      font-size: 13px;
+      color: #858d87;
     }
 
     .nav-links a {
-      transition: 0.2s;
+      transition: color 0.2s ease;
     }
 
     .nav-links a:hover {
-      color: white;
+      color: #ffffff;
     }
 
-    /* HERO */
+    .nav-contact {
+      padding: 9px 13px;
+      border: 1px solid #2a322b;
+      background: #121613;
+      color: #dce3dc;
+      border-radius: 7px;
+    }
+
+    .nav-contact:hover {
+      border-color: #527e39;
+      color: #8dd75b;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
 
     .hero {
-      min-height: 720px;
+      min-height: 610px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 90px 0;
+      padding: 80px 0 75px;
     }
 
-    .badge {
-      display: inline-block;
-      padding: 9px 15px;
-      border: 1px solid rgba(139,99,255,0.35);
-      background: rgba(139,99,255,0.08);
-      border-radius: 999px;
-      color: #cfc4ff;
-      font-size: 13px;
-      margin-bottom: 25px;
+    .hero-grid {
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: #8fd45b;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.4px;
+      margin-bottom: 20px;
+    }
+
+    .status-dot {
+      width: 7px;
+      height: 7px;
+      background: #83cf4d;
+      border-radius: 50%;
+      box-shadow: 0 0 0 4px rgba(131,207,77,0.08);
     }
 
     .hero h1 {
-      font-size: clamp(48px, 8vw, 86px);
-      line-height: 0.95;
-      letter-spacing: -5px;
-      max-width: 900px;
-      margin: auto;
+      max-width: 690px;
+      font-size: clamp(48px, 7vw, 78px);
+      line-height: 0.98;
+      letter-spacing: -4px;
+      font-weight: 900;
     }
 
-    .gradient {
-      background: linear-gradient(90deg, #ffffff, #a98aff, #5ce8c0);
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
+    .hero h1 span {
+      color: #80c84b;
     }
 
-    .hero p {
-      max-width: 650px;
-      margin: 28px auto 0;
-      color: #9da3b0;
-      font-size: 18px;
-      line-height: 1.7;
+    .hero-text {
+      max-width: 600px;
+      margin-top: 25px;
+      color: #969e97;
+      font-size: 16px;
+      line-height: 1.75;
     }
 
-    .buttons {
+    .hero-text strong {
+      color: #dce5dc;
+    }
+
+    .hero-buttons {
       display: flex;
-      justify-content: center;
-      gap: 12px;
+      align-items: center;
+      gap: 11px;
       flex-wrap: wrap;
-      margin-top: 35px;
+      margin-top: 31px;
     }
 
     .button {
-      padding: 15px 22px;
-      border-radius: 12px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 46px;
+      padding: 0 17px;
+      border-radius: 7px;
+      font-size: 13px;
       font-weight: 800;
-      font-size: 14px;
-      transition: 0.2s;
+      transition: 0.2s ease;
     }
 
     .button-primary {
-      background: white;
-      color: #08090d;
+      background: #7fc94b;
+      color: #10160d;
+      box-shadow: 0 4px 0 #4e812f;
+    }
+
+    .button-primary:hover {
+      transform: translateY(-2px);
+      background: #91d95b;
+      box-shadow: 0 6px 0 #4e812f;
     }
 
     .button-secondary {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid #2a312c;
+      background: #121613;
+      color: #c8d0c9;
     }
 
-    .button:hover {
-      transform: translateY(-3px);
+    .button-secondary:hover {
+      border-color: #4a5d45;
+      color: #ffffff;
+      transform: translateY(-2px);
     }
 
-    /* SEKCJE */
+    .hero-note {
+      margin-top: 17px;
+      color: #5e675f;
+      font-size: 11px;
+    }
+
+    /* =========================
+       HERO PREVIEW
+    ========================= */
+
+    .hero-preview {
+      display: flex;
+      justify-content: center;
+    }
+
+    .phone {
+      width: 245px;
+      aspect-ratio: 9 / 16;
+      border: 7px solid #181d19;
+      border-radius: 23px;
+      background:
+        linear-gradient(
+          145deg,
+          rgba(113,191,63,0.25),
+          transparent 40%
+        ),
+        #121612;
+      box-shadow:
+        0 0 0 1px #303930,
+        0 25px 70px rgba(0,0,0,0.5);
+      overflow: hidden;
+      position: relative;
+      transform: rotate(2deg);
+    }
+
+    .phone::before {
+      content: "";
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 62px;
+      height: 6px;
+      border-radius: 10px;
+      background: #080a08;
+      z-index: 3;
+    }
+
+    .minecraft-scene {
+      height: 100%;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(
+          to bottom,
+          #172332 0%,
+          #304b5a 43%,
+          #1f3020 44%,
+          #101810 100%
+        );
+    }
+
+    .moon {
+      position: absolute;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+      background: #e7edda;
+      top: 55px;
+      right: 30px;
+      box-shadow: 0 0 30px rgba(226,238,214,0.2);
+    }
+
+    .mountain {
+      position: absolute;
+      bottom: 30%;
+      width: 180px;
+      height: 140px;
+      background: #172219;
+      clip-path: polygon(
+        0 100%,
+        27% 48%,
+        43% 67%,
+        67% 17%,
+        100% 100%
+      );
+    }
+
+    .mountain-two {
+      position: absolute;
+      bottom: 28%;
+      right: -35px;
+      width: 180px;
+      height: 120px;
+      background: #202d22;
+      clip-path: polygon(
+        0 100%,
+        38% 35%,
+        60% 55%,
+        78% 15%,
+        100% 100%
+      );
+    }
+
+    .grass {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 31%;
+      background:
+        repeating-linear-gradient(
+          90deg,
+          #253a20 0px,
+          #253a20 16px,
+          #20331c 16px,
+          #20331c 32px
+        );
+      border-top: 5px solid #466d31;
+    }
+
+    .preview-copy {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 55px;
+      z-index: 2;
+      text-shadow: 0 3px 10px #000;
+    }
+
+    .preview-copy small {
+      display: block;
+      color: #8fd45b;
+      font-size: 9px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 7px;
+    }
+
+    .preview-copy strong {
+      font-size: 25px;
+      line-height: 1;
+      display: block;
+    }
+
+    .preview-copy span {
+      display: block;
+      margin-top: 8px;
+      color: #d3dad4;
+      font-size: 10px;
+      line-height: 1.4;
+    }
+
+    .preview-bar {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 23px;
+      height: 3px;
+      background: rgba(255,255,255,0.22);
+    }
+
+    .preview-bar::after {
+      content: "";
+      display: block;
+      width: 42%;
+      height: 100%;
+      background: #82ca4e;
+    }
+
+    /* =========================
+       SECTION
+    ========================= */
 
     section {
       padding: 90px 0;
+      border-top: 1px solid #171c18;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
     }
 
     .section-label {
-      color: #65e7c0;
-      font-size: 12px;
+      color: #79bd49;
+      font-size: 10px;
       font-weight: 900;
-      letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 10px;
+      letter-spacing: 1.8px;
+      margin-bottom: 9px;
     }
 
     .section-title {
-      font-size: 38px;
-      letter-spacing: -1.5px;
-      margin-bottom: 12px;
+      font-size: clamp(31px, 5vw, 42px);
+      line-height: 1;
+      letter-spacing: -2px;
+      font-weight: 900;
     }
 
     .section-description {
-      color: #8f96a4;
-      line-height: 1.6;
-      max-width: 650px;
+      max-width: 540px;
+      margin-top: 14px;
+      color: #777f78;
+      font-size: 14px;
+      line-height: 1.7;
     }
 
-    /* USŁUGI */
+    /* =========================
+       HOW IT WORKS
+    ========================= */
 
-    .cards {
+    .steps {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 38px;
+      background: #252b26;
+      border: 1px solid #252b26;
+    }
+
+    .step {
+      padding: 28px;
+      background: #101310;
+    }
+
+    .step-number {
+      color: #4f5a51;
+      font-size: 12px;
+      font-weight: 900;
+      margin-bottom: 34px;
+    }
+
+    .step h3 {
+      font-size: 17px;
+      margin-bottom: 9px;
+    }
+
+    .step p {
+      color: #737c74;
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services {
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .service {
+      padding: 25px;
+      border: 1px solid #222922;
+      background: #101310;
+      border-radius: 9px;
+      display: flex;
       gap: 18px;
-      margin-top: 35px;
+      align-items: flex-start;
+      transition: 0.2s ease;
     }
 
-    .card {
-      padding: 27px;
-      border-radius: 18px;
-      border: 1px solid #222632;
-      background: linear-gradient(145deg, #12151d, #0c0e13);
-      transition: 0.25s;
+    .service:hover {
+      border-color: #384534;
+      transform: translateY(-2px);
     }
 
-    .card:hover {
+    .service-icon {
+      width: 34px;
+      height: 34px;
+      flex: 0 0 34px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      background: #182016;
+      color: #8bcf58;
+      font-size: 15px;
+      border: 1px solid #2b3826;
+    }
+
+    .service h3 {
+      font-size: 15px;
+      margin-bottom: 7px;
+    }
+
+    .service p {
+      color: #727a73;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    /* =========================
+       PORTFOLIO
+    ========================= */
+
+    .portfolio {
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .video-card {
+      aspect-ratio: 9 / 14;
+      border: 1px solid #252b26;
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+      background: #111511;
+      transition: 0.25s ease;
+    }
+
+    .video-card:hover {
       transform: translateY(-5px);
-      border-color: #3b3260;
+      border-color: #5a7947;
     }
 
-    .card-icon {
-      font-size: 28px;
-      margin-bottom: 18px;
+    .video-bg {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(
+          to top,
+          rgba(5,8,5,0.95) 0%,
+          rgba(5,8,5,0.25) 55%,
+          rgba(5,8,5,0.05) 100%
+        ),
+        linear-gradient(
+          145deg,
+          #273e24,
+          #18211a 50%,
+          #0d110e
+        );
     }
 
-    .card h3 {
+    .video-card:nth-child(2) .video-bg {
+      background:
+        linear-gradient(
+          to top,
+          rgba(5,8,5,0.95) 0%,
+          rgba(5,8,5,0.25) 55%,
+          rgba(5,8,5,0.05) 100%
+        ),
+        linear-gradient(
+          145deg,
+          #283b50,
+          #18232c 50%,
+          #0d1114
+        );
+    }
+
+    .video-card:nth-child(3) .video-bg {
+      background:
+        linear-gradient(
+          to top,
+          rgba(5,8,5,0.95) 0%,
+          rgba(5,8,5,0.25) 55%,
+          rgba(5,8,5,0.05) 100%
+        ),
+        linear-gradient(
+          145deg,
+          #4a3420,
+          #241b13 50%,
+          #0e0d0b
+        );
+    }
+
+    .video-top {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      right: 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 2;
+    }
+
+    .video-tag {
+      padding: 5px 7px;
+      background: rgba(8,10,8,0.65);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 5px;
+      font-size: 9px;
+      font-weight: 800;
+      color: #cdd5ce;
+      backdrop-filter: blur(5px);
+    }
+
+    .video-play {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #f1f5f0;
+      color: #101310;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+    }
+
+    .video-info {
+      position: absolute;
+      left: 17px;
+      right: 17px;
+      bottom: 17px;
+      z-index: 2;
+    }
+
+    .video-info h3 {
+      font-size: 16px;
+      margin-bottom: 6px;
+    }
+
+    .video-info p {
+      color: #969e97;
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       CENA
+    ========================= */
+
+    .offer {
+      margin-top: 38px;
+      display: grid;
+      grid-template-columns: 1fr 0.75fr;
+      border: 1px solid #30402c;
+      background: #101410;
+      border-radius: 11px;
+      overflow: hidden;
+    }
+
+    .offer-main {
+      padding: 35px;
+      border-right: 1px solid #273026;
+    }
+
+    .offer-main h3 {
       font-size: 19px;
       margin-bottom: 10px;
     }
 
-    .card p {
-      color: #8f96a4;
-      line-height: 1.6;
-      font-size: 14px;
-    }
-
-    /* PORTFOLIO */
-
-    .portfolio {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-      margin-top: 35px;
-    }
-
-    .video-card {
-      position: relative;
-      aspect-ratio: 9 / 16;
-      overflow: hidden;
-      border-radius: 18px;
-      border: 1px solid #262a35;
-      background:
-        radial-gradient(circle at 50% 25%, rgba(139,99,255,0.35), transparent 35%),
-        linear-gradient(145deg, #171b25, #090b0f);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      transition: 0.25s;
-    }
-
-    .video-card:hover {
-      transform: translateY(-6px);
-      border-color: #6b4ee8;
-    }
-
-    .video-content {
-      padding: 20px;
-    }
-
-    .play {
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      background: white;
-      color: #08090d;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 0 auto 18px;
-      font-size: 20px;
-    }
-
-    .video-card h3 {
-      font-size: 17px;
-    }
-
-    .video-card p {
-      color: #858c9b;
-      font-size: 12px;
-      margin-top: 7px;
-    }
-
-    /* CENNIK */
-
-    .price-wrapper {
-      margin-top: 35px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .price-card {
-      width: 500px;
-      padding: 35px;
-      border-radius: 22px;
-      border: 1px solid #3c3265;
-      background:
-        radial-gradient(circle at top right, rgba(124,92,255,0.2), transparent 40%),
-        #10131b;
-    }
-
-    .price-top {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 25px;
+    .offer-main p {
+      color: #777f78;
+      max-width: 480px;
+      font-size: 13px;
+      line-height: 1.65;
     }
 
     .price {
-      font-size: 48px;
+      margin: 24px 0 4px;
+      font-size: 50px;
       font-weight: 900;
+      letter-spacing: -3px;
+      color: #f4f7f3;
     }
 
     .price small {
-      font-size: 14px;
-      color: #8e95a4;
-      font-weight: normal;
+      color: #727b73;
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0;
     }
 
-    .fire {
-      font-size: 30px;
+    .offer-side {
+      padding: 35px;
+      background: #0d110e;
+    }
+
+    .offer-side h4 {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #7fc94b;
+      margin-bottom: 19px;
     }
 
     .features {
       list-style: none;
-      color: #b7bdc9;
-      line-height: 2;
-      margin-bottom: 25px;
+    }
+
+    .features li {
+      color: #a1aaa2;
+      font-size: 12px;
+      padding: 8px 0;
+      border-bottom: 1px solid #1c221d;
+    }
+
+    .features li:last-child {
+      border-bottom: none;
     }
 
     .features li::before {
       content: "✓";
-      color: #65e7c0;
-      margin-right: 10px;
-      font-weight: bold;
+      color: #7fc94b;
+      margin-right: 9px;
+      font-weight: 900;
     }
 
-    /* KONTAKT */
+    /* =========================
+       KONTAKT
+    ========================= */
+
+    .contact {
+      padding-bottom: 95px;
+    }
 
     .contact-box {
-      padding: 60px 30px;
-      text-align: center;
-      border-radius: 25px;
-      border: 1px solid #332b54;
-      background:
-        radial-gradient(circle at center, rgba(124,92,255,0.16), transparent 55%),
-        #10121a;
+      padding: 45px;
+      border: 1px solid #293128;
+      background: #101410;
+      border-radius: 11px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 40px;
+      align-items: center;
     }
 
     .contact-box h2 {
-      font-size: clamp(32px, 5vw, 48px);
+      font-size: clamp(31px, 5vw, 45px);
       letter-spacing: -2px;
-      margin: 10px 0;
+      line-height: 1;
+      margin-bottom: 13px;
     }
 
     .contact-box p {
-      color: #8e95a4;
-      max-width: 600px;
-      margin: auto;
-      line-height: 1.6;
+      color: #747d75;
+      font-size: 13px;
+      line-height: 1.7;
+      max-width: 520px;
     }
 
-    .contact-info {
-      margin-top: 25px;
-      font-size: 18px;
-      font-weight: bold;
+    .contact-details {
+      min-width: 255px;
+      padding-left: 30px;
+      border-left: 1px solid #293128;
     }
 
-    /* FOOTER */
+    .contact-item {
+      margin-bottom: 16px;
+    }
+
+    .contact-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .contact-item span {
+      display: block;
+      color: #606960;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .contact-item strong {
+      font-size: 14px;
+      color: #dfe6df;
+    }
+
+    .contact-item strong:hover {
+      color: #8ed35a;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
-      padding: 50px 0;
-      text-align: center;
-      color: #555c69;
-      font-size: 13px;
+      border-top: 1px solid #171c18;
+      padding: 28px 0;
+      color: #4f574f;
+      font-size: 11px;
     }
 
-    /* MOBILE */
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
 
-    @media (max-width: 750px) {
+    .footer-inner strong {
+      color: #69736a;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 800px) {
 
       .container {
-        width: min(100% - 28px, 1100px);
+        width: min(100% - 28px, 1080px);
       }
 
       nav {
-        height: 70px;
+        height: 68px;
       }
 
       .nav-links {
@@ -407,39 +887,118 @@
       }
 
       .hero {
-        min-height: auto;
-        padding: 90px 0 70px;
+        padding: 70px 0 65px;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
       }
 
       .hero h1 {
         letter-spacing: -3px;
       }
 
-      .hero p {
-        font-size: 16px;
+      .hero-preview {
+        justify-content: flex-start;
+        padding-left: 15%;
+      }
+
+      .phone {
+        width: 210px;
       }
 
       section {
         padding: 65px 0;
       }
 
-      .cards,
-      .portfolio {
+      .section-heading {
+        display: block;
+      }
+
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .services {
         grid-template-columns: 1fr;
       }
 
       .portfolio {
-        max-width: 320px;
-        margin-left: auto;
-        margin-right: auto;
+        grid-template-columns: 1fr 1fr;
       }
 
-      .section-title {
-        font-size: 31px;
+      .offer {
+        grid-template-columns: 1fr;
       }
 
-      .price-card {
-        padding: 25px;
+      .offer-main {
+        border-right: none;
+        border-bottom: 1px solid #273026;
+      }
+
+      .contact-box {
+        grid-template-columns: 1fr;
+        padding: 30px;
+      }
+
+      .contact-details {
+        border-left: none;
+        border-top: 1px solid #293128;
+        padding-left: 0;
+        padding-top: 25px;
+      }
+    }
+
+    @media (max-width: 500px) {
+
+      .hero {
+        padding-top: 55px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+      }
+
+      .hero-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .hero-preview {
+        justify-content: center;
+        padding-left: 0;
+      }
+
+      .portfolio {
+        grid-template-columns: 1fr;
+        max-width: 280px;
+      }
+
+      .video-card {
+        aspect-ratio: 9 / 14;
+      }
+
+      .offer-main,
+      .offer-side {
+        padding: 27px;
+      }
+
+      .price {
+        font-size: 43px;
+      }
+
+      .contact-box {
+        padding: 26px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
@@ -453,14 +1012,15 @@
 
     <nav>
 
-      <div class="logo">
+      <a href="#" class="logo">
+        <span class="logo-square"></span>
         MC <span>TIKTOK</span>
-      </div>
+      </a>
 
       <div class="nav-links">
-        <a href="#portfolio">Portfolio</a>
-        <a href="#oferta">Oferta</a>
-        <a href="#kontakt">Kontakt</a>
+        <a href="#portfolio">Realizacje</a>
+        <a href="#oferta">Cena</a>
+        <a href="#kontakt" class="nav-contact">Napisz do mnie</a>
       </div>
 
     </nav>
@@ -468,317 +1028,597 @@
 
     <!-- HERO -->
 
-    <section class="hero">
+    <main>
 
-      <div>
+      <section class="hero">
 
-        <div class="badge">
-          🎬 Montaż reklam dla serwerów Minecraft
+        <div class="hero-grid">
+
+          <div>
+
+            <div class="eyebrow">
+              <span class="status-dot"></span>
+              Montaż reklam Minecraft
+            </div>
+
+            <h1>
+              Masz serwer.<br>
+              <span>Ja zrobię TikToka.</span>
+            </h1>
+
+            <p class="hero-text">
+              Montuję krótkie reklamy dla serwerów Minecraft.
+              <strong>Ty wysyłasz materiały, ja zajmuję się resztą.</strong>
+              Napisy, muzyka, cięcia, efekty i format 9:16.
+            </p>
+
+            <div class="hero-buttons">
+
+              <a href="#kontakt" class="button button-primary">
+                Chcę reklamę →
+              </a>
+
+              <a href="#portfolio" class="button button-secondary">
+                Zobacz moje realizacje
+              </a>
+
+            </div>
+
+            <div class="hero-note">
+              Aktualna cena startowa: 20 zł / TikTok
+            </div>
+
+          </div>
+
+
+          <!-- PODGLĄD -->
+
+          <div class="hero-preview">
+
+            <div class="phone">
+
+              <div class="minecraft-scene">
+
+                <div class="moon"></div>
+
+                <div class="mountain"></div>
+
+                <div class="mountain-two"></div>
+
+                <div class="grass"></div>
+
+                <div class="preview-copy">
+
+                  <small>
+                    Twój serwer Minecraft
+                  </small>
+
+                  <strong>
+                    Wbij i<br>
+                    zobacz sam.
+                  </strong>
+
+                  <span>
+                    Krótko. Dynamicznie.<br>
+                    Bez nudnego intra.
+                  </span>
+
+                </div>
+
+                <div class="preview-bar"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+
         </div>
 
-        <h1>
-          Twój serwer.<br>
-          <span class="gradient">Lepszy TikTok.</span>
-        </h1>
+      </section>
 
-        <p>
-          Tworzę dynamiczne reklamy TikTok dla serwerów Minecraft.
-          Montaż od zera, napisy, efekty, muzyka i mocne CTA.
+
+      <!-- JAK TO DZIAŁA -->
+
+      <section>
+
+        <div class="section-label">
+          Jak to wygląda
+        </div>
+
+        <div class="section-heading">
+
+          <div>
+            <h2 class="section-title">
+              Bez zbędnego kombinowania.
+            </h2>
+
+            <p class="section-description">
+              Nie musisz znać się na montażu ani przygotowywać
+              gotowego scenariusza. Wystarczy, że masz serwer
+              i kilka materiałów.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="steps">
+
+          <div class="step">
+
+            <div class="step-number">
+              01
+            </div>
+
+            <h3>
+              Wysyłasz materiały
+            </h3>
+
+            <p>
+              Podeślij gameplay, screeny, logo serwera albo
+              cokolwiek, co ma pojawić się w reklamie.
+            </p>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="step-number">
+              02
+            </div>
+
+            <h3>
+              Ja robię montaż
+            </h3>
+
+            <p>
+              Składam materiał w krótkiego TikToka.
+              Dodaję napisy, muzykę, efekty i odpowiednie tempo.
+            </p>
+
+          </div>
+
+
+          <div class="step">
+
+            <div class="step-number">
+              03
+            </div>
+
+            <h3>
+              Dostajesz gotowy film
+            </h3>
+
+            <p>
+              Otrzymujesz gotowy materiał w pionowym formacie,
+              który możesz od razu wrzucić na TikToka.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- USŁUGI -->
+
+      <section>
+
+        <div class="section-label">
+          Co montuję
+        </div>
+
+        <h2 class="section-title">
+          Wszystko, czego potrzebuje krótka reklama.
+        </h2>
+
+        <p class="section-description">
+          Bez przesadzania z efektami. Najważniejsze jest to,
+          żeby widz nie przewinął filmu po pierwszych dwóch sekundach.
         </p>
 
-        <div class="buttons">
 
-          <a href="#kontakt" class="button button-primary">
-            Zamów TikToka →
-          </a>
+        <div class="services">
 
-          <a href="#portfolio" class="button button-secondary">
-            Zobacz portfolio
-          </a>
+          <div class="service">
 
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- USŁUGI -->
-
-    <section>
-
-      <div class="section-label">
-        Co dostajesz
-      </div>
-
-      <h2 class="section-title">
-        Montaż od zera.
-      </h2>
-
-      <p class="section-description">
-        Dostajesz gotowy materiał przygotowany pod TikToka.
-        Bez konieczności samodzielnego montowania filmu.
-      </p>
-
-
-      <div class="cards">
-
-        <div class="card">
-
-          <div class="card-icon">⚡</div>
-
-          <h3>
-            Dynamiczny montaż
-          </h3>
-
-          <p>
-            Szybkie cięcia, zoomy, przejścia i efekty dopasowane
-            do tempa reklamy.
-          </p>
-
-        </div>
-
-
-       
-
-
-        <div class="card">
-
-          <div class="card-icon">📱</div>
-
-          <h3>
-            Gotowe pod TikToka
-          </h3>
-
-          <p>
-            Pionowy format 9:16 i montaż przygotowany
-            specjalnie pod krótkie materiały.
-          </p>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PORTFOLIO -->
-
-    <section id="portfolio">
-
-      <div class="section-label">
-        Portfolio
-      </div>
-
-      <h2 class="section-title">
-        Moje realizacje.
-      </h2>
-
-      <p class="section-description">
-        Tutaj znajdziesz przykładowe reklamy wykonane przeze mnie.
-      </p>
-
-
-      <div class="portfolio">
-
-
-        <!-- FILM 1 -->
-
-        <a
-          class="video-card"
-          href="https://www.tiktok.com/@blocklygg/video/7674680495761886496"
-          target="_blank"
-        >
-
-          <div class="video-content">
-
-            <div class="play">
-              ▶
+            <div class="service-icon">
+              ✂
             </div>
-
-            <h3>
-              Realizacja #01
-            </h3>
-
-            <p>
-              Kliknij, aby zobaczyć TikToka
-            </p>
-
-          </div>
-
-        </a>
-
-
-        <!-- FILM 2 -->
-
-        <a
-          class="video-card"
-          href="https://www.tiktok.com/@lawamc.pl/video/7663976551620431126?q=lawamc&t=1786922528698"
-          target="_blank"
-        >
-
-          <div class="video-content">
-
-            <div class="play">
-              ▶
-            </div>
-
-            <h3>
-              Realizacja #02
-            </h3>
-
-            <p>
-              Kliknij, aby zobaczyć TikToka
-            </p>
-
-          </div>
-
-        </a>
-
-
-        <!-- FILM 3 -->
-
-        <a
-          class="video-card"
-          href="https://www.tiktok.com/@lawamc.pl/video/7661047648341773590?q=lawamc&t=1786922528698"
-          target="_blank"
-        >
-
-          <div class="video-content">
-
-            <div class="play">
-              ▶
-            </div>
-
-            <h3>
-              Realizacja #03
-            </h3>
-
-            <p>
-              Kliknij, aby zobaczyć TikToka
-            </p>
-
-          </div>
-
-        </a>
-
-      </div>
-
-    </section>
-
-
-    <!-- CENNIK -->
-
-    <section id="oferta">
-
-      <div class="section-label">
-        Oferta
-      </div>
-
-      <h2 class="section-title">
-        Prosta cena.
-      </h2>
-
-      <p class="section-description">
-        Cena promocyjna na czas budowania portfolio.
-      </p>
-
-
-      <div class="price-wrapper">
-
-        <div class="price-card">
-
-          <div class="price-top">
 
             <div>
 
-              <div class="price">
-                20 zł - cena startowa
-              </div>
+              <h3>
+                Dynamiczne cięcia
+              </h3>
 
-              <small>
-                za TikToka do 25 sekund
-              </small>
+              <p>
+                Szybsze tempo, zoomy i przejścia tam,
+                gdzie faktycznie mają sens.
+              </p>
 
-            </div>
-
-            <div class="fire">
-              🔥
             </div>
 
           </div>
 
 
-          <ul class="features">
+          <div class="service">
 
-            <li>
-              TikTok do 20 sekund
-            </li>
+            <div class="service-icon">
+              Aa
+            </div>
 
-            <li>
-              Pełny montaż od zera
-            </li>
+            <div>
 
-            <li>
-              Napisy i efekty
-            </li>
+              <h3>
+                Napisy
+              </h3>
+
+              <p>
+                Czytelne napisy dopasowane do filmu,
+                żeby reklama działała również bez dźwięku.
+              </p>
+
+            </div>
+
+          </div>
 
 
-            <li>
-              Format 9:16
-            </li>
+          <div class="service">
 
-          </ul>
+            <div class="service-icon">
+              ♪
+            </div>
 
+            <div>
+
+              <h3>
+                Muzyka i dźwięki
+              </h3>
+
+              <p>
+                Muzyka i efekty dźwiękowe dobrane
+                do charakteru materiału.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <div class="service">
+
+            <div class="service-icon">
+              9:16
+            </div>
+
+            <div>
+
+              <h3>
+                Format TikTok
+              </h3>
+
+              <p>
+                Pionowy materiał przygotowany pod TikToka
+                i krótkie formaty video.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- PORTFOLIO -->
+
+      <section id="portfolio">
+
+        <div class="section-label">
+          Portfolio
+        </div>
+
+        <h2 class="section-title">
+          Kilka rzeczy, które już zrobiłem.
+        </h2>
+
+        <p class="section-description">
+          Kliknij wybraną realizację, żeby zobaczyć pełny TikTok.
+        </p>
+
+
+        <div class="portfolio">
+
+
+          <!-- REALIZACJA 1 -->
 
           <a
-            href="#kontakt"
-            class="button button-primary"
-            style="display:block;text-align:center;"
+            class="video-card"
+            href="https://www.tiktok.com/@blocklygg/video/7674680495761886496"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            Zamawiam reklamę
+
+            <div class="video-bg"></div>
+
+            <div class="video-top">
+
+              <span class="video-tag">
+                REALIZACJA #01
+              </span>
+
+              <span class="video-play">
+                ▶
+              </span>
+
+            </div>
+
+            <div class="video-info">
+
+              <h3>
+                Reklama serwera
+              </h3>
+
+              <p>
+                Kliknij, aby obejrzeć na TikToku →
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <!-- REALIZACJA 2 -->
+
+          <a
+            class="video-card"
+            href="https://www.tiktok.com/@lawamc.pl/video/7663976551620431126?q=lawamc&t=1786922528698"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <div class="video-bg"></div>
+
+            <div class="video-top">
+
+              <span class="video-tag">
+                REALIZACJA #02
+              </span>
+
+              <span class="video-play">
+                ▶
+              </span>
+
+            </div>
+
+            <div class="video-info">
+
+              <h3>
+                TikTok reklamowy
+              </h3>
+
+              <p>
+                Kliknij, aby obejrzeć na TikToku →
+              </p>
+
+            </div>
+
+          </a>
+
+
+          <!-- REALIZACJA 3 -->
+
+          <a
+            class="video-card"
+            href="https://www.tiktok.com/@lawamc.pl/video/7661047648341773590?q=lawamc&t=1786922528698"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+
+            <div class="video-bg"></div>
+
+            <div class="video-top">
+
+              <span class="video-tag">
+                REALIZACJA #03
+              </span>
+
+              <span class="video-play">
+                ▶
+              </span>
+
+            </div>
+
+            <div class="video-info">
+
+              <h3>
+                Krótka reklama
+              </h3>
+
+              <p>
+                Kliknij, aby obejrzeć na TikToku →
+              </p>
+
+            </div>
+
           </a>
 
         </div>
 
-      </div>
-
-    </section>
+      </section>
 
 
-   <!-- KONTAKT -->
+      <!-- OFERTA -->
 
-<section id="kontakt">
+      <section id="oferta">
 
-  <div class="contact-box">
+        <div class="section-label">
+          Aktualna oferta
+        </div>
 
-    <div class="section-label">
-      Kontakt
-    </div>
+        <h2 class="section-title">
+          Jedna cena. Bez kombinowania.
+        </h2>
 
-    <h2>
-      Chcesz reklamę?
-    </h2>
+        <p class="section-description">
+          Na ten moment biorę 20 zł za materiał.
+          Cena jest niska, bo chcę przede wszystkim robić
+          więcej realizacji i rozwijać portfolio.
+        </p>
 
-    <p>
-      Napisz do mnie i podeślij informacje o swoim serwerze
-      oraz materiały potrzebne do przygotowania reklamy.
-    </p>
 
-    <div class="contact-info">
-      📩 Discord: <strong>maciek_v2</strong><br><br>
-      📧 E-mail: <strong>MagellanReklama@gmail.com</strong>
-    </div>
+        <div class="offer">
 
-  </div>
+          <div class="offer-main">
 
-</section>
+            <h3>
+              TikTok reklamowy
+            </h3>
+
+            <p>
+              Krótki, dynamiczny materiał przygotowany
+              pod promocję Twojego serwera Minecraft.
+            </p>
+
+            <div class="price">
+              20 zł
+              <small>
+                / TikTok
+              </small>
+            </div>
+
+            <a
+              href="#kontakt"
+              class="button button-primary"
+            >
+              Zamawiam reklamę →
+            </a>
+
+          </div>
+
+
+          <div class="offer-side">
+
+            <h4>
+              W cenie
+            </h4>
+
+            <ul class="features">
+
+              <li>
+                Materiał do 20 sekund
+              </li>
+
+              <li>
+                Montaż od zera
+              </li>
+
+              <li>
+                Napisy
+              </li>
+
+              <li>
+                Muzyka i efekty
+              </li>
+
+              <li>
+                Format 9:16
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      <!-- KONTAKT -->
+
+      <section id="kontakt" class="contact">
+
+        <div class="contact-box">
+
+          <div>
+
+            <div class="section-label">
+              Kontakt
+            </div>
+
+            <h2>
+              Masz serwer?<br>
+              Pogadajmy.
+            </h2>
+
+            <p>
+              Napisz do mnie na Discordzie albo przez e-mail.
+              Podeślij informacje o serwerze i materiały,
+              a ustalimy, co możemy zrobić z reklamą.
+            </p>
+
+          </div>
+
+
+          <div class="contact-details">
+
+            <div class="contact-item">
+
+              <span>
+                Discord
+              </span>
+
+              <strong>
+                maciek_v2
+              </strong>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <span>
+                E-mail
+              </span>
+
+              <a href="mailto:MagellanReklama@gmail.com">
+                <strong>
+                  MagellanReklama@gmail.com
+                </strong>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </main>
 
 
     <!-- STOPKA -->
 
     <footer>
-      © 2026 MC TikTok • Montaż reklam dla serwerów Minecraft
+
+      <div class="footer-inner">
+
+        <div>
+          © 2026 <strong>MC TikTok</strong>
+        </div>
+
+        <div>
+          Montaż reklam dla serwerów Minecraft
+        </div>
+
+      </div>
+
     </footer>
 
   </div>
